@@ -7,7 +7,7 @@ import re
 
 
 
-directory = r"C:\Users\Kamil\OneDrive\Inżynieria danych i Data Science\BMW-3-market_analysis_and_price_prediction\data\BMW3_data.txt"
+file_path = r"C:\Users\Kamil\OneDrive\Inżynieria danych i Data Science\BMW-3-market_analysis_and_price_prediction\data\BMW3_data.csv"
 
 
 url_site = "https://www.otomoto.pl/osobowe/bmw/seria-3?page="
@@ -15,7 +15,7 @@ url_site = "https://www.otomoto.pl/osobowe/bmw/seria-3?page="
 cars = pd.DataFrame()
 
 
-pages=1
+pages=110
 
 def get_car_info(car_url):
     response_car = requests.get(car_url)
@@ -26,10 +26,12 @@ def get_car_info(car_url):
     
     title = soup_car.find("h3", attrs={"class": "offer-title big-text ezl3qpx2 ooa-ebtemw er34gjf0"}).text
     price = soup_car.find("h3", attrs={"class": "offer-price__number eqdspoq4 ooa-o7wv9s er34gjf0"}).text
-    print(price)
     attribute_table =  soup_car.find('div', attrs={"class": "ooa-1gtr7l5 e18eslyg2"})
     
     car_dict = {}
+    car_dict['Nazwa'] = title
+    car_dict['Cena'] = price
+    
     for attribute in soup_car.find_all('div', attrs={"class": "ooa-162vy3d e18eslyg3"}):
         attributes = attribute.find_all(['p', 'a'])
         attribute_name = attributes[0].text
@@ -60,9 +62,8 @@ for i in range(1, pages + 1):
             continue
 #        print(link)
         car_info = get_car_info(link)
-        cars = pd.concat([cars, car_info])
-        print(cars)     
+        cars = pd.concat([cars, car_info]) 
+    print(i)
 
-
-cars.to_csv(directory, index=False)
+cars.to_csv(file_path, index=False)
 print('File created')
