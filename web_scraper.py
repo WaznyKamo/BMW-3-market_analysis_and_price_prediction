@@ -36,6 +36,7 @@ def get_car_info(car_url):
     car = pd.DataFrame(car_dict, index=[0])
     return car
 
+
 for i in range(1, pages + 1):
     url = url_site + str(i)
     response = requests.get(url)
