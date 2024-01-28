@@ -1,5 +1,5 @@
 # BMW-3-market_analysis_and_price_prediction
-Project for Data Science and Data Engineering postgraduate studies. 
+Considering buying a car, I wanted to know the market better. Especially how do diffrent factors impact the price. It is very important in order to pick a right offer - for car that is moderatly new, so it is cheaper, but the greatest price drop has already happened, so it will hold value better. Analyzing many factors can give us a great overview on the car market what is very interesting. Also building a regression model, trained on a great number of car offers can be very useful in order to fairly price the car for sale.
 Consist of:
 * Data collection via web scrapping
 * Data cleaning
