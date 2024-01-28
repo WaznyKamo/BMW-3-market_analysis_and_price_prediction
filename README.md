@@ -8,6 +8,17 @@ Consist of:
 
 The project was run on a anaconda enviroment using Python 3.10.1 and Jupyter Notebook.
 
+Key takeaways:
+* There are more offers for cars marked as manufactured in Germany, than in Poland
+* Amount of offers for cars aged over 20 years drop dirastically - this may be due to a car longevity
+* Almost half of the offered cars have been in a accident
+* There is very low variability in prices for cars aged between 15 and 30 years. This means that the condition, equipment and other variables might be not that important in these offers.
+* Prices in newer cars (aged <6 years) vary dirastically
+* There is a greater price drop with age than with mileage
+* Mileage for offers in the first ~12 years has almost linear character, after it gets very hard to find relationship
+* The greatest results for price prediction have been found for Random Forrest Regression model. Surprisingly it is based almost entirely on age
+* Linear regression model takes into account many more features (is more balanced) but has a worse performance
+
 ## Data collection
 Data has been collected from otomoto.pl - Poland's greatest web car marketplace. The data was gathered on 08.01.2024 using requests and BeautifulSoup libraries. 
 
@@ -39,7 +50,8 @@ For models evaluation there have been used metrics of R Squared and cross valida
 All models have performed well with Linear, Ridge and Lasso regressors having score of 0.86 for training and 0.85 for test data splits. Random Forest Regressor has achieved even greater scores of 0.97 and 0.95 accordingly.
 
 Feature importance based on Linear Regression model:
-![Feature importance in Linear Regression for BMW 3 Series price prediciton](https://github.com/WaznyKamo/BMW-3-market_analysis_and_price_prediction/assets/34655004/618356ec-c349-4087-8dd1-984fdae5d261)
+![Feature importance in Linear Regression for BMW 3 Series price prediciton](https://github.com/WaznyKamo/BMW-3-market_analysis_and_price_prediction/assets/34655004/c9dfac65-eeec-4269-9a6c-66936e50c6f4)
+
 
 Feature importance based on Random Forrest Regression model:
 ![obraz_2024-01-28_213146040](https://github.com/WaznyKamo/BMW-3-market_analysis_and_price_prediction/assets/34655004/7cfacd47-6f9a-4917-9169-ffb758d8945f)
