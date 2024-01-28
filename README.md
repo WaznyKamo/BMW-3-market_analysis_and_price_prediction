@@ -38,4 +38,8 @@ In this order, there have been trained models based on:
 For models evaluation there have been used metrics of R Squared and cross validation score.
 All models have performed well with Linear, Ridge and Lasso regressors having score of 0.86 for training and 0.85 for test data splits. Random Forest Regressor has achieved even greater scores of 0.97 and 0.95 accordingly.
 
+Feature importance based on Linear Regression model:
+![Feature importance in Linear Regression for BMW 3 Series price prediciton](https://github.com/WaznyKamo/BMW-3-market_analysis_and_price_prediction/assets/34655004/618356ec-c349-4087-8dd1-984fdae5d261)
 
+Feature importance based on Random Forrest Regression model:
+![obraz_2024-01-28_213146040](https://github.com/WaznyKamo/BMW-3-market_analysis_and_price_prediction/assets/34655004/7cfacd47-6f9a-4917-9169-ffb758d8945f)
