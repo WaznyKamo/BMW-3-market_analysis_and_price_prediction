@@ -6,15 +6,10 @@ from time import sleep
 import re
 
 
-
 file_path = r"C:\Users\Kamil\OneDrive\Inżynieria danych i Data Science\BMW-3-market_analysis_and_price_prediction\data\BMW3_data.csv"
-
-
 url_site = "https://www.otomoto.pl/osobowe/bmw/seria-3?page="
 
 cars = pd.DataFrame()
-
-
 pages=110
 
 def get_car_info(car_url):
@@ -38,14 +33,8 @@ def get_car_info(car_url):
         attribute_value = attributes[1].text
         
         car_dict[attribute_name] = attribute_value
-    
     car = pd.DataFrame(car_dict, index=[0])
     return car
-
-
-
-    
-    
 
 for i in range(1, pages + 1):
     url = url_site + str(i)
